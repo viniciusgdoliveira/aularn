@@ -14,7 +14,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
       }}>
-      <Tabs.Screen
+        <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
@@ -23,15 +23,27 @@ export default function TabLayout() {
           ),
         }}
       />
+        <Tabs.Screen
+      name="editar"
+      options={{
+        title: 'Adicionar',
+        // href: '/editar',
+        tabBarIcon: ({ color, focused }) => (
+          <TabBarIcon name={focused ? 'add-circle' : 'add-circle-outline'} color={color} />
+        ),
+      }}
+      />
+      
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
+          title: 'Explorar',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
         }}
       />
+      
     </Tabs>
   );
 }
